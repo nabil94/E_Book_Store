@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="ISO-8859-1">
+        <title>Intetory management</title>
+        <link rel="stylesheet" type="text/css" href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    </head>
+
+    <body>
+        <div class="container text-center">
+            <div>
+                <h1>WelCome to project</h1>
+            </div>
+            <div class="p-2">
+                <a class="h2" th:href="@{/categories}">List Of Categories</a>
+            </div>
+            <div class="p-2">
+                <a class="h2" th:href="@{/categories/new}">Create Categories</a>
+            </div>
+            <div class="p-2">
+                <a class="h2" th:href="@{/products}">Products</a>
+            </div>
+            <div class="p-2">
+                <a class="h2" th:href="@{/products/new}">Create Products</a>
+            </div>
+            <div class="p-2">
+                <a class="h2" th:href="@{/brands}">Brands List</a>
+            </div>
+            <div class="p-2">
+                <a class="h2" th:href="@{/brands/new}">Create Brands</a>
+            </div>
+        </div>
+    </body>
+</html>

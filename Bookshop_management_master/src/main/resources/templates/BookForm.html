@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container text-center">
+        <div th:if="@{book.id == 0}">
+            <h1>Edit Product</h1>
+        </div>
+        <div th:unless="@{book.id == 0}">
+            <h1>Create product</h1>
+        </div>
+        
+        <form th:action="@{/Admin/save}" th:object="${book}" method="post"
+        style="max-width: 600px; margin: 0 auto">
+        <input type="hidden" th:field="*{id}" th:value="${book.id}" />
+            <div class="form-group row">
+                <div>
+                    <label>Book Name : </label>
+                </div>
+                <div>
+                    <input type="text" th:field="*{name}" class="form-control" required />
+                </div>
+                <div>
+                    <label>Author Name : </label>
+                </div>
+                <div>
+                    <input type="text" th:field="*{author}" class="form-control" required />
+                </div>
+                
+                <div>
+                    <label>Pubisher Name : </label>
+                </div>
+                <div>
+                    <input type="text" th:field="*{publisher}" class="form-control" required />
+                </div>
+                <div>
+                    <label>Book Price : </label>
+                </div>
+                <div>
+                    <input type="number" step="0.1" th:field="*{price}" class="form-control" required />
+                </div>
+                <div>
+                    <label>In Stock : </label>
+                </div>
+                <div>
+                    <input type="number" step="1" th:field="*{inStock}" class="form-control" required />
+                </div>
+                <div>
+                    <label>Description : </label>
+                </div>
+                <div>
+                    <input type="text" th:field="*{description}" class="form-control" required />
+                </div>
+                <div>
+                    <label>ISBN : </label>
+                    <input type="text" th:field="*{isbn}" class="form-control" required />
+                </div>
+                
+                
+                
+                <br>
+                <br>
+                <br>
+                <div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

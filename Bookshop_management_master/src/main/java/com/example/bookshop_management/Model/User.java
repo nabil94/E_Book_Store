@@ -12,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -48,6 +49,9 @@ public class User {
 
     )
     private Collection<Role> roles;
+
+    @OneToOne(mappedBy = "user")
+    private ShoppingCart shoppingCart;
 
     public User(){
         
@@ -109,6 +113,14 @@ public class User {
 
     public void setRoles(Collection<Role> roles){
         this.roles = roles;
+    }
+
+    public ShoppingCart getShoppingCart(){
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(ShoppingCart shoppingCart){
+        this.shoppingCart = shoppingCart;
     }
     
 }

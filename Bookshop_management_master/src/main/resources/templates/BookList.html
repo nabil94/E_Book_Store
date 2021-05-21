@@ -50,18 +50,20 @@
                             <td>[[${book.name}]]</td>
                             <td>[[${book.price}]]</td>
                             <td>[[${book.author}]]</td>
-                            <!--<td>
-                                <a th:href="@{'/products/edit/' + ${product.id}}">Edit</a>
+                            <td>
+                                
+                                <a th:href="@{'/Admin/list/edit/' + ${book.id}}">Edit</a>
                                 &nbsp;
-                                <a th:href="@{'/products/delete/' + ${product.id}}">Delete</a>
-                            </td>-->
+                                <a th:href="@{'/Admin/list/delete/' + ${book.id}}">Delete</a>
+                            
+                            </td>
                         </tr>
                     </th:block>
                 </tbody>
             </table>
         </div>
         <div class="p-2">
-            <a class="h2" th:href="@{/}">Back to home</a>
+            <a class="h2" th:href="@{/Admin}">Back to home</a>
         </div>
     </div>
 </body>

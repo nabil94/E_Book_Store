@@ -21,7 +21,12 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService{
 
 
-    private UserRepository userRepository;
+    
+	/* ********OpenRefactory Warning********
+	 The following field should have any one of @Autowired, @Value, @Resource, or @Inject annotation
+	*/
+
+	private UserRepository userRepository;
 
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
